@@ -1,4 +1,19 @@
 #!/usr/bin/make -f
 
+ifneq (,$(filter $(DEB_HOST_ARCH),armel m68k mips mipsel powerpc sh4))
+  EXTRA=-DCMAKE_CXX_STANDARD_LIBRARIES=-latomic
+endif
+
 %:
 	dh $@
+
+override_dh_auto_configure:
+	dh_auto_configure -- -DSKIP_PORTABILITY_TEST=on -DWITH_WERROR=OFF $(EXTRA)
+
+override_dh_auto_build:
+	dh_auto_build -- all doc
+
+override_dh_install:
+	dh_install --exclude license
+	find debian/*/usr/share/doc -name CMakeLists.txt -exec sed -i '/add_subdirectory(doc)/d' \{\} \;
+	find debian/ -name LICENSE -delete
