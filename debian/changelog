@@ -1,5 +1,185 @@
-template-repository (1.0-1) unstable; urgency=medium
+libcereal (1.3.2+dfsg-5) unstable; urgency=medium
 
-  * Initial release
+  * Team upload.
 
- -- Tsic404 <liuheng@deepin.org>  Sat, 28 Jan 2023 13:46:49 +0800
+  [ Aaron M. Ucko ]
+  * Fix autopkgtest regression on non x86: cc1plus: all warnings being
+    treated as errors
+    Closes: #1034369
+
+ -- Andreas Tille <tille@debian.org>  Fri, 14 Apr 2023 19:18:06 +0200
+
+libcereal (1.3.2+dfsg-4) unstable; urgency=medium
+
+  * Team upload.
+  * Disable -Werror to fix FTBFS on arm, ppc, s390x (Closes: #1021394)
+
+ -- Scott Talbert <swt@techie.net>  Thu, 13 Oct 2022 13:31:58 -0400
+
+libcereal (1.3.2+dfsg-3) unstable; urgency=medium
+
+  * Team upload.
+  * Fix watch file
+  * libcereal-dev Architecture: any since the cmake files are not
+    Architecture independent
+    Closes: #1020779
+  * Standards-Version: 4.6.1 (routine-update)
+  * Lintian-overrides for flase positive
+
+ -- Andreas Tille <tille@debian.org>  Thu, 06 Oct 2022 09:36:11 +0200
+
+libcereal (1.3.2+dfsg-2) unstable; urgency=medium
+
+  * Team upload.
+  * d/t/run-unit-test: Copy sandbox dir
+    for autopkgtests (Closes: #1016742)
+
+ -- Nilesh Patra <nilesh@debian.org>  Sun, 07 Aug 2022 13:17:06 +0530
+
+libcereal (1.3.2+dfsg-1) unstable; urgency=medium
+
+  * Team upload.
+  * New upstream version
+  * Add BUILD_SANDBOX to autopkgtest
+
+ -- Andreas Tille <tille@debian.org>  Tue, 03 May 2022 11:17:25 +0200
+
+libcereal (1.3.1+dfsg-1) unstable; urgency=medium
+
+  * New upstream version
+  * Refresh patches. Sent add-only-tests-target upstream.
+  * Adjust to changes in cmake locations
+  * Don't install another copy of the rapidxml license
+
+ -- Michael R. Crusoe <crusoe@debian.org>  Mon, 17 Jan 2022 09:22:46 +0100
+
+libcereal (1.3.0+dfsg-2) unstable; urgency=medium
+
+  * Team upload.
+  * Fix watch file
+  * Standards-Version: 4.6.0 (routine-update)
+
+ -- Andreas Tille <tille@debian.org>  Thu, 30 Sep 2021 11:40:31 +0200
+
+libcereal (1.3.0+dfsg-1) unstable; urgency=medium
+
+  [ Andreas Tille ]
+  * Team upload.
+  * Standards-Version: 4.5.1 (routine-update)
+  * debhelper-compat 13 (routine-update)
+  * Add salsa-ci file (routine-update)
+  * Rules-Requires-Root: no (routine-update)
+  * watch file standard 4 (routine-update)
+  * install from debian/tmp to enable dh_missing --fail-missing
+  * install cmake file
+  * Remove code copy of rapidjson and use Debian packaged code instead
+    Closes: #976585
+
+  [ Michael R. Crusoe ]
+  * debian/patches/{reproducible-doxygen,drop-google-analytics}:
+    doesn't need forwarding upstream.
+
+ -- Michael R. Crusoe <crusoe@debian.org>  Wed, 13 Jan 2021 10:20:13 +0100
+
+libcereal (1.3.0-3) unstable; urgency=medium
+
+  * libcereal-dev: Convert to Architecture: all, saves space and eases
+    cross-building
+  * Mark -dev and -doc as Multi-Arch: foreign
+  * Tweak the doxygen patch to make the build reproducible
+  * Standards-Version: 4.5.0 (routine-update)
+  * Use secure URI in Homepage field.
+  * Set upstream metadata fields: Bug-Database, Bug-Submit, Repository,
+    Repository-Browse.
+
+ -- Michael R. Crusoe <michael.crusoe@gmail.com>  Fri, 28 Feb 2020 17:26:41 +0100
+
+libcereal (1.3.0-2) unstable; urgency=medium
+
+  * debian/ruiles: Work around build failures on platforms without processor
+    intrinsics for atomic operations
+
+ -- Michael R. Crusoe <michael.crusoe@gmail.com>  Mon, 28 Oct 2019 14:19:21 +0100
+
+libcereal (1.3.0-1) unstable; urgency=medium
+
+  * New upstream version
+  * debhelper-compat 12
+  * Standards-Version: 4.4.0
+
+ -- Michael R. Crusoe <michael.crusoe@gmail.com>  Sun, 27 Oct 2019 17:23:31 +0100
+
+libcereal (1.2.2-3) unstable; urgency=medium
+
+  * Team upload.
+  * Do not try to change non-existing files in binary all builds
+    Closes: #916969
+
+ -- Andreas Tille <tille@debian.org>  Thu, 20 Dec 2018 22:34:59 +0100
+
+libcereal (1.2.2-2) unstable; urgency=medium
+
+  * Team upload.
+  * Fix autopkgtest
+    Closes: #911261
+  * Normalise autopkgtest (as in other Debian Med packages)
+  * debhelper 11
+  * Remove trailing whitespace in debian/changelog
+
+ -- Andreas Tille <tille@debian.org>  Thu, 20 Dec 2018 15:07:17 +0100
+
+libcereal (1.2.2-1) unstable; urgency=medium
+
+  * New upstream release.
+
+ -- Michael R. Crusoe <michael.crusoe@gmail.com>  Wed, 17 Oct 2018 02:06:26 -0700
+
+libcereal (1.2.1-3) unstable; urgency=medium
+
+  * Team upload
+  * Do not set -Werror which makes build fail when using gcc-7
+    Closes: #853486
+  * debhelper 10
+  * Standards-Version: 4.1.0 (no changes needed)
+
+ -- Andreas Tille <tille@debian.org>  Thu, 31 Aug 2017 23:28:27 +0200
+
+libcereal (1.2.1-2) unstable; urgency=medium
+
+  * Make Doxygen docs reproducible.
+
+ -- Michael R. Crusoe <michael.crusoe@gmail.com>  Thu, 10 Nov 2016 04:01:18 -0800
+
+libcereal (1.2.1-1) unstable; urgency=medium
+
+  * New upstream release with support for g++ 6 (Closes: #834187)
+  * Drop arm compatibility patch as it was incorporated upstream
+
+ -- Michael R. Crusoe <michael.crusoe@gmail.com>  Sun, 14 Aug 2016 02:11:45 -0700
+
+libcereal (1.1.2-4) unstable; urgency=medium
+
+  * Drop multilib builddeb (Closes: #814530)
+
+ -- Michael R. Crusoe <crusoe@ucdavis.edu>  Fri, 12 Feb 2016 16:27:13 -0800
+
+libcereal (1.1.2-3) unstable; urgency=medium
+
+  * Applied patch from upstream, try building on all archs again.
+
+ -- Michael R. Crusoe <crusoe@ucdavis.edu>  Thu, 11 Feb 2016 14:04:10 -0800
+
+libcereal (1.1.2-2) unstable; urgency=medium
+
+  * Only build for *-amd64, sparc64 until upstream fixes their code.
+  (Closes: # 813280, #813281, #813282)
+  * Added autopkgtest
+  * Fix Vcs-Git URL.
+
+ -- Michael R. Crusoe <crusoe@ucdavis.edu>  Sun, 31 Jan 2016 00:19:40 -0800
+
+libcereal (1.1.2-1) unstable; urgency=low
+
+  * Initial release (Closes: #800335)
+
+ -- Michael R. Crusoe <crusoe@ucdavis.edu>  Fri, 18 Sep 2015 19:13:43 -0700
